@@ -16,6 +16,8 @@ NSDictionary *startupNotification;
     // Registered for remote notifications
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registeredForRemoteNotifications:) name:@"registeredForRemoteNotifications" object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(registeredForRemoteNotifications:) name:@"registeredForRemoteNotificationsError" object:nil];
+    
     // Received remote notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receivedRemoteNotification:) name:@"receivedRemoteNotification" object:nil];
     
@@ -57,6 +59,11 @@ NSDictionary *startupNotification;
     [self.bridge.eventDispatcher sendDeviceEventWithName:@"registeredForRemoteNotifications"
                                                     body:@{@"token": deviceTokenStr}];
     
+}
+
+- (void) registeredForRemoteNotificationsError:(NSNotification *) notification {
+    [self.bridge.eventDispatcher sendDeviceEventWithName:@"registeredForRemoteNotifications"
+                                                    body:@{@"error": @"Could not register for remote noticiations"}];
 }
 
 - (void) receivedRemoteNotification:(NSNotification *) notification {

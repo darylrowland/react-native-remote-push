@@ -6,6 +6,7 @@ var {
 } = React;
 
 const REGISTERED_FOR_REMOTE = "registeredForRemoteNotifications";
+const REGISTERED_FOR_REMOTE_ERROR = "registeredForRemoteNotificationsError";
 const RECEIVED_REMOTE = "receivedRemoteNotification";
 
 module.exports = {
@@ -17,6 +18,12 @@ module.exports = {
                 callback(null, notification);
             }
         );
+
+        DeviceEventEmitter.addListener(
+            REGISTERED_FOR_REMOTE_ERROR, function(error) {
+                callback("Couldn't register for notifications");
+            }
+        )
     },
 
     setListenerForNotifications: function(callback) {
