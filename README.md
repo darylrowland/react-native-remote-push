@@ -6,6 +6,8 @@ React Native module that allows you to:
 
 It's very basic code for now, but provides functionality above and beyond the PushNotificationIOS class that is provided as standard in react native.
 
+It borrows heavily from the way that the Cordova Push Plugin works, so massive thanks to those guys, over here: https://github.com/phonegap-build/PushPlugin
+
 ... more to come!
 
 I'm not too sure how to distribute this as a module (NPM?), so if you want to help me do that, feel free to make some pull requests.
