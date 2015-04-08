@@ -18,6 +18,12 @@ Copy all of the files to your XCode directory, and add them to your project. The
 var RemotePushIOS = require("./../RemotePush/RemotePushIOS");
 ```
 
+Note: you'll also need to add the following line to your AppDelegate.m: 
+
+```
+#import "RemotePushDelegate.h"
+```
+
 ### Registering For Push Notifications
 
 ```
