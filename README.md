@@ -26,6 +26,13 @@ Note: you'll also need to add the following line to your AppDelegate.m:
 #import "RemotePushDelegate.h"
 ```
 
+And then also add this method (this is VERY important - your app won't start unless you do this)
+```
+- (id) init {
+  return self;
+}
+```
+
 ### Registering For Push Notifications
 
 ```
