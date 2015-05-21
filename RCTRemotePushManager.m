@@ -4,6 +4,8 @@
 
 @implementation RCTRemotePushManager
 
+RCT_EXPORT_MODULE()
+
 @synthesize bridge = _bridge;
 
 NSDictionary *startupNotification;
@@ -32,9 +34,8 @@ NSDictionary *startupNotification;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)requestPermissions
+RCT_EXPORT_METHOD(requestPermissions)
 {
-    RCT_EXPORT();
     
     //Register for remote notifications straightaway
     [[UIApplication sharedApplication] registerForRemoteNotifications];
@@ -75,9 +76,8 @@ NSDictionary *startupNotification;
     startupNotification = notification.userInfo;
 }
 
-- (void)getStartupNotifications: (RCTResponseSenderBlock)callback
+RCT_EXPORT_METHOD(getStartupNotifications: (RCTResponseSenderBlock)callback)
 {
-    RCT_EXPORT();
     
     if (startupNotification) {
         callback(@[[NSNull null], startupNotification]);
