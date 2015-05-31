@@ -13,5 +13,8 @@
   "license": "",
   "bugs": {
     "url": "https://github.com/darylrowland/react-native-remote-push/issues"
+  },
+  "peerDependencies": {
+    "react-native": "^0.4.4"
   }
 }
