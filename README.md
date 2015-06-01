@@ -10,7 +10,9 @@ It borrows heavily from the way that the Cordova Push Plugin works, so massive t
 
 ... more to come!
 
-I'm not too sure how to distribute this as a module (NPM?), so if you want to help me do that, feel free to make some pull requests.
+Thanks to @jhen0409 this is now available as an NPM module:
+npm install react-native-remote-push
+
 
 ## Examples
 ### Getting started
