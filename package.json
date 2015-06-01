@@ -1,0 +1,20 @@
+{
+  "name": "react-native-remote-push",
+  "version": "1.0.0",
+  "description": "React Native Remote Push Notifications Component",
+  "main": "RemotePushIOS.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darylrowland/react-native-remote-push.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/darylrowland/react-native-remote-push/issues"
+  },
+  "peerDependencies": {
+    "react-native": "^0.4.4"
+  }
+}
