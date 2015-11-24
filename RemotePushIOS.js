@@ -1,7 +1,7 @@
-var RemotePushManager = require("NativeModules").RemotePushManager;
 var React = require("react-native");
 
 var {
+    NativeModules,
     DeviceEventEmitter
 } = React;
 
@@ -11,7 +11,7 @@ const RECEIVED_REMOTE = "receivedRemoteNotification";
 
 module.exports = {
     requestPermissions: function(callback) {
-        RemotePushManager.requestPermissions();
+        NativeModules.RemotePushManager.requestPermissions();
 
         DeviceEventEmitter.addListener(
             REGISTERED_FOR_REMOTE, function(notification) {
@@ -27,7 +27,7 @@ module.exports = {
     },
 
     setListenerForNotifications: function(callback) {
-        RemotePushManager.getStartupNotifications(function(err, startupNotification) {
+        NativeModules.RemotePushManager.getStartupNotifications(function(err, startupNotification) {
             if (startupNotification) {
                 callback(startupNotification);
             }
