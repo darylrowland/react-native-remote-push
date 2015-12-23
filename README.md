@@ -61,6 +61,10 @@ componentWillMount: function() {
 
 receiveRemoteNotification: function(notification) {
      // Your code to run when the alert fires
+     
+     // Determine whether notification was received on startup. Note that it will return false if the app was running in the background. To determine if the app was open or not, you'll need to keep track of the appState separately.
+     console.log(notification.startup);
+
      AlertIOS.alert(
          'Notification received',
          notification.aps.alert,
@@ -73,6 +77,5 @@ receiveRemoteNotification: function(notification) {
 ```    
 
 The notification will contain an aps object with your alert as well as any custom payload data you have.
-
 
 
