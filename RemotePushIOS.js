@@ -29,6 +29,7 @@ module.exports = {
     setListenerForNotifications: function(callback) {
         NativeModules.RemotePushManager.getStartupNotifications(function(err, startupNotification) {
             if (startupNotification) {
+                startupNotification.startup = true;
                 callback(startupNotification);
             }
 
@@ -36,6 +37,7 @@ module.exports = {
 
         DeviceEventEmitter.addListener(
             RECEIVED_REMOTE, function(notification) {
+                notification.startup = false;
                 callback(notification);
             }
         );
